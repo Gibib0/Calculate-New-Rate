@@ -2,11 +2,11 @@
 
 function calculateRating(myRating, opponentRating) {
 	if(myRating < 0 || opponentRating < 0) {
-		return null
+		return 'Enter a positive number, please'
 	}
 
 	if(typeof myRating !== 'number' || typeof opponentRating !== 'number') {
-		return null
+		return 'Enter a number please'
 	}
 
 	if(myRating === 0) {
@@ -26,5 +26,13 @@ function calculateRating(myRating, opponentRating) {
 		myRating += (opponentRating - myRating + 5) / 3
 	}
 
-	
+	return Math.round(myRating * 10) / 10
 }
+
+console.log(calculateRating(-1, 2));
+console.log(calculateRating('abc', 'def'));
+console.log(calculateRating(10, 0));
+console.log(calculateRating(0, 20));
+console.log(calculateRating(10, 30));
+console.log(calculateRating(20, 19));
+console.log(calculateRating(30, 10));
