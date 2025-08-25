@@ -3,15 +3,15 @@
  * 
  * @param {number} myRating 
  * @param {number} opponentRating 
- * @returns {number or string} - winner rating or error message
+ * @returns {number} - winner rating
  */
 function calculateRating(myRating, opponentRating) {
 	if(myRating < 0 || opponentRating < 0) {
-		return 'Enter a positive number, please'
+		return NaN
 	}
 
 	if(typeof myRating !== 'number' || typeof opponentRating !== 'number') {
-		return 'Enter a number please'
+		return NaN
 	}
 
 	if(myRating === 0) {
@@ -28,7 +28,7 @@ function calculateRating(myRating, opponentRating) {
 	} else if(difference > 2 && difference < 20) {
 		myRating += 1
 	} else if(difference < 0) {
-		myRating += (opponentRating - myRating + 5) / 3
+		myRating += (Math.abs(difference) + 5) / 3
 	}
 
 	return Math.round(myRating * 10) / 10
