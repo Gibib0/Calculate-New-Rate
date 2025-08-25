@@ -1,5 +1,10 @@
 'use strict'
-
+/**
+ * 
+ * @param {number} myRating 
+ * @param {number} opponentRating 
+ * @returns {number or string} - winner rating or error message
+ */
 function calculateRating(myRating, opponentRating) {
 	if(myRating < 0 || opponentRating < 0) {
 		return 'Enter a positive number, please'
