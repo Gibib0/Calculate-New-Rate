@@ -24,11 +24,13 @@ function calculateRating(myRating, opponentRating) {
 	const difference = myRating - opponentRating
 
 	if(difference >= 0 && difference <= 2) {
-		myRating += 2
-	} else if(difference > 2 && difference < 20) {
-		myRating += 1
-	} else if(difference < 0) {
-		myRating += (Math.abs(difference) + 5) / 3
+		 return myRating += 2
+	}
+	if(difference > 2 && difference < 20) {
+		return myRating += 1
+	}
+	if(difference < 0) {
+		return myRating += Math.round((Math.abs(difference) + 5) / 3 * 10) / 10
 	}
 
 	return Math.round(myRating * 10) / 10
